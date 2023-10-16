@@ -31,7 +31,9 @@ function CountryDetails() {
     <>
       <div className="container">
         <p style={{ fontSize: "24px", fontWeight: "bold" }}>Country Details</p>
-
+        <img
+          src={`https://flagpedia.net/data/flags/icon/72x54/${oneCountry.alpha2Code.toLowerCase()}.png`}
+        />
         <h1>{oneCountry.name.official}</h1>
 
         <table className="table">
