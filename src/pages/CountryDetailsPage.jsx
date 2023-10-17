@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 function CountryDetails() {
   const [oneCountry, setOneCountry] = useState(null);
-  const { countryId } = useParams();
+  const { alpha3Code } = useParams();
 
   const fetchOneCountry = async () => {
     try {
       const response = await axios.get(
-        `https://ih-countries-api.herokuapp.com/countries/${countryId}`
+        `https://ih-countries-api.herokuapp.com/countries/${alpha3Code}`
       );
       // console.log(response)
       setOneCountry(response.data);
@@ -21,7 +21,7 @@ function CountryDetails() {
 
   useEffect(() => {
     fetchOneCountry();
-  }, [countryId]);
+  }, [alpha3Code]);
 
   if (!oneCountry) {
     return "loading";
